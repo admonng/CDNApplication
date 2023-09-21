@@ -5,28 +5,28 @@ BEGIN
 END
 GO
 
-CREATE PROCEDURE [dbo].[UspUserSel]
-(
-	@PageNumber INT,
-    @PageSize INT
-)
-AS
-SET NOCOUNT ON
-
-	-- Calculate the offset and fetch next rows
-    DECLARE @Offset INT = (@PageNumber - 1) * @PageSize;
-
-	SELECT COUNT(1) 
-	FROM tblUser WITH(NOLOCK)
-
-    -- Get records for the requested page
-    SELECT *
-    FROM tblUser WITH(NOLOCK)
-    ORDER BY Id -- Add your ordering here if needed
-    OFFSET @Offset ROWS
-    FETCH NEXT @PageSize ROWS ONLY;
-
-SET NOCOUNT OFF
+CREATE PROCEDURE [dbo].[UspUserSel]    
+(    
+  @PageNumber INT,    
+  @PageSize INT    
+)    
+AS    
+SET NOCOUNT ON    
+    
+ -- Calculate the offset and fetch next rows    
+    DECLARE @Offset INT = (@PageNumber - 1) * @PageSize;    
+    
+    SELECT COUNT(1) AS TotalRecordCount     
+    FROM tblUser WITH(NOLOCK)    
+    
+    -- Get records for the requested page    
+    SELECT *    
+    FROM tblUser WITH(NOLOCK)    
+    ORDER BY Id -- Add your ordering here if needed    
+    OFFSET @Offset ROWS    
+    FETCH NEXT @PageSize ROWS ONLY;    
+    
+SET NOCOUNT OFF  
 GO
 
 -- UspUserMaintain
@@ -80,6 +80,3 @@ SET NOCOUNT ON
 SET NOCOUNT OFF
 GO
 
--- data
-INSERT INTO tblUser
-VALUES (NEWID(), 'Peter', 'peter@gmail.com', '018-3802655', 'SAP', 'Badminton')

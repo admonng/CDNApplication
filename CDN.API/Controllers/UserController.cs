@@ -25,11 +25,6 @@ namespace CDN.API.Controllers
 
                 if (!blnIsSuccess)
                     throw new Exception(strExceptionMessage);
-
-                if (uData == null || uData.UserDataList == null || (uData.UserDataList != null && uData.UserDataList.Count == 0))
-                {
-                    return NotFound();
-                }
             }
             catch (Exception ex)
             {

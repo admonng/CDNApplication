@@ -13,7 +13,7 @@ CREATE TABLE [dbo].[tblUser]
 	[Skillsets][nvarchar](MAX) NULL,
 	[Hobby][nvarchar](20) NULL,
 	[InserDateTime][datetime] NOT NULL,
-	[UpdateDateTime][datetime] NOT NULL,
+	[UpdateDateTime][datetime] NULL,
 	CONSTRAINT PK_tblUser_Id PRIMARY KEY NONCLUSTERED (Id)
 )
 GO

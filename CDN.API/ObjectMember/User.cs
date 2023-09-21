@@ -13,10 +13,10 @@
     public class UserData 
     { 
         public List<User> UserDataList { get; set; }
-        public int iTotalRecord { get;set; }
+        public int TotalRecord { get;set; }
         
-        public int iPageSize { get; set; }
+        public int PageSize { get; set; }
 
-        public int iPageNo { get; set; }
+        public int PageNo { get; set; }
     }
 }
