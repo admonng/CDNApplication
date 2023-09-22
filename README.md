@@ -1,6 +1,6 @@
 # CDNApplication
 ## Techology used
-1) C# under ASP.NET MVC CORE
+1) C# under ASP.NET CORE MVC
 2) MS SQL Server
 
 ## How to run
